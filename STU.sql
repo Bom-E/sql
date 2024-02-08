@@ -1,0 +1,13 @@
+-- 학생 관리 프로그램 테이블
+-- NOT NULL : 필수 입력 데이터
+-- DEFAULT : 입력 안 할 시 NULL이 아닌 기본값을 부여
+CREATE TABLE STU (
+   STU_NO INT PRIMARY KEY
+   , STU_NAME VARCHAR(10) NOT NULL
+   , KOR_SCORE INT DEFAULT 0
+   , ENG_SCORE INT DEFAULT 0
+   , INTRO VARCHAR(50)
+);
+
+SELECT *
+FROM stu;
