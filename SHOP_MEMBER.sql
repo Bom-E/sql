@@ -42,6 +42,18 @@ CREATE TABLE SHOP_ITEM (
    , CATE_CODE INT NOT NULL REFERENCES ITEM_CATEGORY(CATE_CODE)
 );
 
+-- 준비 중 : 1, 판매 중 : 2, 매진 : 3
+ALTER TABLE shop_item ADD COLUMN ITEM_STATUS INT DEFAULT 1;
+ALTER TABLE shop_item DROP COLUMN ITEM_STATUS;
+
+SELECT *
+FROM shop_item;
+
+COMMIT;
+
+UPDATE SHOP_ITEM 
+SET ITEM_STATUS = 2;
+
 -- 상품의 이미지 정보를 관리하는 테이블
 CREATE TABLE ITEM_IMAGE (
 	IMG_CODE INT AUTO_INCREMENT PRIMARY KEY
@@ -333,3 +345,19 @@ SELECT BUY_CODE
 FROM buy_detail;
 
 COMMIT;
+
+-- 2024.02.06일 구매 정보 조회
+SELECT *
+FROM shop_buy
+WHERE DATE_FORMAT(BUY_DATE, '%Y-%m-%d') = '2024-02-06';
+
+-- 문자열 -> 날짜, 날짜 -> 문자열
+-- SELECT NOW()
+-- , STR_TO_DATE('2024-01-01', '%Y-%m-%d') date;
+ 
+-- 날짜 -> 문자열
+SELECT BUY_DATE
+	, DATE_FORMAT(BUY_DATE, '%Y-%m-%d')
+	, DATE_FORMAT(BUY_DATE, '%Y-%m-%d %h:%i:%s')
+	, DATE_FORMAT(BUY_DATE, '%Y')
+FROM shop_buy;
