@@ -74,3 +74,11 @@ SELECT (SELECT ITEM_NAME
 			FROM SHOP_MEMBER 
 			WHERE MEMBER_ID = shop_CART.MEMBER_ID) MEMBER_NAME
 FROM shop_cart;
+
+
+SELECT ITEM_NAME
+            , CATE_CODE
+            , (SELECT CATE_NAME
+                FROM ITEM_CATEGORY
+                WHERE CATE_CODE = SHOP_ITEM.CATE_CODE) 
+        FROM shop_item;
