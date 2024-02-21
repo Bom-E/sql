@@ -23,15 +23,3 @@ FROM car_info;
 
 SELECT * 
 FROM sales_info;
-
-INSERT INTO SALES_INFO (
-   CUSTOMER_NAME
-   , SALES_COLOR
-   , CAR_NAME
-   , CUSTOMER_TEL
-) VALUES (
-   '홍길동'
-   , '화이트'
-   , '아반떼'
-   , '010-1111-2222'
-);
