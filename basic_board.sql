@@ -10,3 +10,4 @@ SELECT *
 FROM stu;
 
 ROLLBACK;
+
