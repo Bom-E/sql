@@ -80,7 +80,7 @@ ON ITEM.ITEM_CODE = IMG.ITEM_CODE
 WHERE ITEM.ITEM_CODE = 1;
 
 SELECT *
-FROM shop_item;
+FROM shop_member;
 
 COMMIT;
 
