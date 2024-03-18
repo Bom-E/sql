@@ -502,20 +502,18 @@ INSERT INTO users(
 	, GENDER
 	, EMAIL
 	, IS_ADMIN
-	, card_num
 ) VALUES (
-	1
-	, 'ver054'
+	10
+	, 'c1234'
 	, '1234'
-	, '김봄이'
-	, '010-1111-2222'
+	, '자'
+	, '010-5555-6666'
 	, 12345
 	, '울산시 남구'
 	, '그린아카데미'
 	, '여자'
 	, '1234@gmail.com'
-	, 'Y'
-	, 1
+	, 'N'
 );
 
 SELECT * FROM book_bnr;
@@ -528,3 +526,16 @@ UPDATE book_info
 SET 
    BOOK_BORROW_AVAILABLE = 'Y'
 WHERE BOOK_INFO_NUM = 156;
+
+SELECT USER_CODE
+   , USER_ID
+   , USER_NAME
+   , GENDER
+   , USER_TEL
+   , IS_ADMIN
+   , CARD_NUM
+FROM users
+WHERE USER_NAME BETWEEN 'ㄱ' AND '힣';
+        
+        COMMIT;
+SELECT * FROM users;
